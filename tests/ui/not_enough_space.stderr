@@ -1,0 +1,5 @@
+error: not enough space for field
+ --> tests/ui/not_enough_space.rs:6:5
+  |
+6 |     #[bits(1)]
+  |     ^

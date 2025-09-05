@@ -1,0 +1,5 @@
+error: missing #[bits(W)] for this field type
+ --> tests/ui/missing_bits_for_unknown.rs:5:5
+  |
+5 |     a: u64,
+  |     ^

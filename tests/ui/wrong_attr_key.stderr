@@ -1,0 +1,5 @@
+error: expected `bytes = <int>`
+ --> tests/ui/wrong_attr_key.rs:3:18
+  |
+3 | #[packbits::pack(b = 1)]
+  |                  ^

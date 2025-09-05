@@ -1,0 +1,5 @@
+error: `skip` must be > 0
+ --> tests/ui/skip_zero.rs:5:5
+  |
+5 |     #[skip(0)]
+  |     ^
