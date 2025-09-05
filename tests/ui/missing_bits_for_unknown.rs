@@ -1,8 +1,10 @@
 use packbits as _;
 
+struct Field {}
+
 #[packbits::pack(bytes = 1)]
 struct Bad {
-    a: u64,
+  a: Field,
 }
 
 fn main() {}

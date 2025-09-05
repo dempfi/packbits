@@ -1,4 +1,4 @@
-error: expected `bytes = <int>`
+error: expected `bytes = <int>`, integer type (u8/u16/u32/u64/u128), or `msb`/`lsb`
  --> tests/ui/wrong_attr_key.rs:3:18
   |
 3 | #[packbits::pack(b = 1)]

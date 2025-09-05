@@ -1,7 +1,33 @@
 [package]
-  edition = "2024"
   name    = "packbits"
   version = "0.1.0"
+
+  categories = [
+    "data-structures",
+    "embedded",
+    "emulators",
+    "encoding",
+    "no-std",
+  ]
+  description = "Tiny, zero-boilerplate bit packing for your own structs: convert to/from fixed-size byte arrays and integer containers with one attribute."
+  documentation = "https://docs.rs/packbits"
+  edition = "2024"
+  include = [
+    "src/**",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE*",
+    "docs/**",
+    "examples/**",
+    "rustfmt.toml",
+    "benches/**",
+    "tests/**",
+  ]
+  keywords = ["bitfield", "bits", "packing", "proc-macro", "no_std"]
+  license = "Apache-2.0"
+  readme = "README.md"
+  repository = "https://github.com/dempfi/packbits"
+  rust-version = "1.85"
 
 [lib]
   proc-macro = true
@@ -12,4 +38,12 @@
   syn         = { version = "^2", features = ["full", "extra-traits"] }
 
 [dev-dependencies]
-trybuild = "1"
+  bitfield-struct  = "0.8"
+  criterion        = { version = "0.5", features = ["html_reports"] }
+  modular-bitfield = "0.11"
+  packed_struct    = "0.10"
+  trybuild         = "1"
+
+[[bench]]
+  harness = false
+  name    = "bitfield_compare"

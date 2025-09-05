@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cargo-test",
+      "type": "shell",
+      "command": "cargo test --all --locked --quiet",
+      "isBackground": false,
+      "problemMatcher": ["$rustc-json"],
+      "group": "build"
+    }
+  ]
+}

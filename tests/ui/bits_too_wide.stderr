@@ -1,5 +1,5 @@
-error: bits width must be 1..=32
- --> tests/ui/bits_too_wide.rs:5:5
+error: bits width must be 1..=128
+ --> tests/ui/bits_too_wide.rs:5:3
   |
-5 |     #[bits(33)]
-  |     ^
+5 |   #[bits(129)]
+  |   ^
