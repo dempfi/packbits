@@ -296,7 +296,7 @@ impl Diagram {
   pub(super) fn render(&self) -> String {
     let mut out = String::new();
     out.push_str(CODE_FENCE);
-    out.push('\n');
+    out.push_str("no_run\n");
     let labels = self.plan_labels();
     for row_idx in 0..self.rows.len() {
       self.render_row(&mut out, row_idx, &labels);
@@ -320,9 +320,9 @@ mod tests {
 
   fn bracket_lines(md: &str) -> Vec<&str> {
     let lines: Vec<&str> = md.lines().collect();
-    assert!(lines.first() == Some(&super::CODE_FENCE), "diagram starts with code fence");
+    assert!(lines.first().map(|s| s.starts_with(super::CODE_FENCE)).unwrap_or(false), "diagram starts with code fence");
     assert!(lines.last() == Some(&super::CODE_FENCE), "diagram ends with code fence");
-    // Even-indexed lines between fences are bracket lines: 2,4,6,...
+    // After skipping first line and enumerating: even indices are bracket lines (2,4,6,...)
     lines
       .iter()
       .enumerate()
@@ -373,7 +373,7 @@ mod tests {
 
   fn header_lines(md: &str) -> Vec<&str> {
     let lines: Vec<&str> = md.lines().collect();
-    assert!(lines.first() == Some(&super::CODE_FENCE));
+    assert!(lines.first().map(|s| s.starts_with(super::CODE_FENCE)).unwrap_or(false));
     assert!(lines.last() == Some(&super::CODE_FENCE));
     lines
       .iter()
